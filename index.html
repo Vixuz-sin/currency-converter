@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Currency Converter</title>
+  <meta name="description" content="Convert between 160+ currencies with live exchange rates.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💱</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Currency Converter</h1>
+    <p class="sub">Live exchange rates for 160+ currencies</p>
+
+    <form class="card" id="form" autocomplete="off">
+      <div class="field">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" inputmode="decimal" min="0" step="any" value="100">
+      </div>
+      <div class="pair">
+        <div class="field">
+          <label for="from">From</label>
+          <select id="from"></select>
+        </div>
+        <button type="button" id="swap" class="swap" aria-label="Swap currencies" title="Swap currencies">⇄</button>
+        <div class="field">
+          <label for="to">To</label>
+          <select id="to"></select>
+        </div>
+      </div>
+
+      <output id="result" class="result" for="amount from to" aria-live="polite"></output>
+      <p id="rate" class="rate"></p>
+    </form>
+
+    <section class="card">
+      <h2 id="popular-title">Popular</h2>
+      <table class="popular" aria-labelledby="popular-title">
+        <tbody id="popular"></tbody>
+      </table>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+    <footer>Rates by <a href="https://www.exchangerate-api.com">ExchangeRate-API</a></footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
